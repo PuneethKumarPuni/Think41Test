@@ -1,0 +1,146 @@
+/* Custom CSS for Customer Management System */
+
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header Styles */
+.bg-gradient-primary {
+  background: linear-gradient(135deg, #007bff 0%, #0056b3 100%) !important;
+}
+
+/* Customer Card Styles */
+.customer-card {
+  transition: all 0.3s ease;
+  border: 1px solid #e3e6f0;
+}
+
+.customer-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+  border-color: #007bff;
+}
+
+.customer-avatar {
+  flex-shrink: 0;
+}
+
+.customer-details {
+  font-size: 0.9rem;
+}
+
+.customer-details i {
+  width: 18px;
+  text-align: center;
+}
+
+/* Search Bar Styles */
+.search-container .input-group {
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.search-container .form-control {
+  border-left: none;
+  border-right: none;
+}
+
+.search-container .form-control:focus {
+  border-color: #007bff;
+  box-shadow: none;
+}
+
+.search-container .input-group-text {
+  border-right: none;
+}
+
+/* Pagination Styles */
+.pagination-lg .page-link {
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+}
+
+.pagination .page-link {
+  color: #007bff;
+  border-color: #dee2e6;
+  transition: all 0.2s ease;
+}
+
+.pagination .page-item.active .page-link {
+  background-color: #007bff;
+  border-color: #007bff;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 123, 255, 0.25);
+}
+
+.pagination .page-link:hover {
+  color: #0056b3;
+  background-color: #e9ecef;
+  border-color: #dee2e6;
+  transform: translateY(-1px);
+}
+
+/* Badge Styles */
+.badge {
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+/* Loading and Error States */
+.spinner-border {
+  animation: spinner-border 0.75s linear infinite;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .customer-card .d-grid.d-md-flex {
+    gap: 0.5rem;
+  }
+  
+  .customer-card .btn {
+    font-size: 0.875rem;
+  }
+  
+  .pagination-lg {
+    margin: 0;
+  }
+  
+  .pagination-lg .page-link {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Utility Classes */
+.text-break {
+  word-break: break-word;
+}
+
+.opacity-75 {
+  opacity: 0.75;
+}
+
+/* Animation for card entrance */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.customer-card {
+  animation: fadeInUp 0.5s ease-out;
+}
+
+/* Focus styles for accessibility */
+.btn:focus,
+.form-control:focus,
+.page-link:focus {
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
