@@ -124,6 +124,10 @@ SET
 
 
 select * from orders;
-
+insert into users (id, first_name, last_name, email, age, gender, state, street_address, postal_code, city, country, latitude, longitude, traffic_source, created_at)values(90000, 'Puneeth', 'kumar', 'p@gmail.com', 22, 'Male', 'NYK', 'n0 02', 'sample', 'sample', 'sample', -9.945567619
+, -67.83560991
+, 'sample', '2022-07-19 13:51:00+00:00
+');
 select * from users;
 SHOW VARIABLES LIKE 'secure_file_priv';
+desc users;
