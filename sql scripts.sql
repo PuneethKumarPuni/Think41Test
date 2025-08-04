@@ -97,3 +97,33 @@ CREATE TABLE order_items (
 
 
 show tables;
+
+
+LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/users.csv'
+INTO TABLE users
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS
+(id, first_name, last_name, email, age, gender, state, street_address, postal_code, city, country, latitude, longitude, traffic_source, created_at);
+
+LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/orders.csv'
+INTO TABLE orders
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS
+(order_id, user_id, status, gender, @created_at, @returned_at, @shipped_at, @delivered_at, num_of_item)
+SET 
+    created_at = NULLIF(@created_at, ''),
+    returned_at = NULLIF(@returned_at, ''),
+    shipped_at = NULLIF(@shipped_at, ''),
+    delivered_at = NULLIF(@delivered_at, '');
+
+
+
+
+select * from orders;
+
+select * from users;
+SHOW VARIABLES LIKE 'secure_file_priv';
